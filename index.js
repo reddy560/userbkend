@@ -24,4 +24,22 @@ app.get("/alluser",async(req,res)=>{
     }
 })
 
+app.post("/adduser",async(req,res)=>{
+    try{
+    let resobj=await resmodel.findById({"_id":req.body._id})
+    if(resobj)
+    {
+        res.send("hno exists in db")
+    }
+    else{
+  await  new resmodel(req.body).save()
+  res.send("record added")
+    }
+    }
+    catch(err)
+    {
+        res.send(err)
+    }
+})
+
 app.listen(5000)
