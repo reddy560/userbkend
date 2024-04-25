@@ -13,4 +13,15 @@ app.get("/",(req,res)=>{
     res.send("hello from server")
 })
 
+app.get("/alluser",async(req,res)=>{
+    try{
+    let data=await resmodel.find()
+    res.json(data)
+    }
+    catch(err)
+    {
+        res.send(err)
+    }
+})
+
 app.listen(5000)
