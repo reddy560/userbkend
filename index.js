@@ -9,5 +9,8 @@ mongoose.connect("mongodb+srv://vyshnavi:12345@cluster0.hzwb4zt.mongodb.net/demo
     console.log("ok")
 })
 app.use("/",route)
+app.get("/",(req,res)=>{
+    res.send("hello from server")
+})
 
 app.listen(5000)
