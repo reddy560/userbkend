@@ -2,6 +2,18 @@ let express=require("express")
 let mongoose=require("mongoose")
 const route = require("./routes/route")
 let cors=require("cors")
+
+let mongoose=require("mongoose")
+let ressch=new mongoose.Schema({
+    "_id":Number,
+    "name":String,
+    "phno":String,
+    "sub1":Number,
+    "sub2":Number,
+    "sub3":Number,
+    "sub4":Number,
+})
+let resmodel=mongoose.model("results",ressch)
 let app=express()
 app.use(cors())
 app.use(express.json())
